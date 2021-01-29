@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Review</title>
+	<script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+	<div id="app1">
+		{{ test1 }}
+	</div>
+
+	<div id='app2'> 
+		<span v-bind:title='demo2'>
+			这是第二个demo！鼠标悬停上面！
+		</span>
+	</div>
+
+	<!-- 上面介绍vue绑定变量的两种方式 -->
+
+	<div id='app3'>
+		<span v-if='show'>恭喜你看到第三个demo</span>		
+	</div>
+
+	<div id='app4'>
+		<ol>
+			<li v-for='todo in todos'>
+				{{ todo.text }}
+			</li>
+
+		</ol>
+
+	</div>
+
+	<script type="text/javascript">
+		var vue4 = new Vue({
+			el: '#app4',
+			data: {  // 这个循环写的不好，到时候再写写。
+				todos: [
+				{ text: "测试1" },
+				{ text: "测试2" },
+				{ text: "测试3" }
+				]
+			}
+		})
+
+		var vue3 = new Vue({
+			el: '#app3',
+			data: {
+				show: true
+			}
+		})
+
+		var vue1 = new Vue({ // 注意这里的对象要在() 里面
+			el: "#app1",
+			data: {
+				test1: '这是第一个Demo!'
+			}
+		})
+
+		var vue2 = new Vue({
+			el: '#app2',
+			data: {
+				demo2: '恭喜！'
+			}
+		})
+
+	</script>
+</body>
+</html>

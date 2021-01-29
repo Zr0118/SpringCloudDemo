@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hello Vue</title>
+	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+	<div id="app">
+		{{ message }}
+	</div>
+
+	<script type="text/javascript">
+		var app = new Vue({
+			el: '#app',//element 元素
+			data: { // data 注册变量，为变量初始化
+				message: 'Hello Vue!'
+			}
+		});
+	</script>
+</body>
+</html>
